@@ -1,6 +1,6 @@
 {
-  "name": "wolt-frontend-2020",
-  "homepage": "http://wes337.github.io/wolt-frontend-2020",
+  "name": "restaurants-swiper",
+  "homepage": "http://wes337.github.io/restaurants-swiper",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
