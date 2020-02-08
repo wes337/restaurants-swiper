@@ -1,6 +1,6 @@
 # Restaurants Swiper
 Swipe left or right on restaurants! Or click the panel button to search.
-[Try it on GH pages](http://wes337.github.io/restaurant-swiper)
+[Try it out](http://wes337.github.io/restaurants-swiper)!
 
 Or you can clone this repo and run
 
