@@ -1,0 +1,111 @@
+@import '../../variables.scss';
+
+.restaurant__card {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background-color: $color-white;
+  box-shadow: $shadow;
+
+  .restaurant__card__image--container {
+    grid-row: span 1;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    img {
+      pointer-events: none;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .restaurant__card__content {
+    grid-row: span 1;
+    padding: 2rem;
+    pointer-events: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card__title {
+      font-family: $font-header;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .card__price {
+      font-size: 1.6rem;
+      font-family: $font-header;
+      color: darken($color: $color-gold, $amount: 10%);
+      margin-bottom: 1rem;
+    }
+
+    .card__info {
+      flex-grow: 1;
+    }
+
+    .card__description {
+      font-family: $font-body;
+      font-weight: 300;
+      font-size: 1.4rem;
+    }
+
+    .card__tags {
+      text-align: right;
+      
+      .card__tag {
+        display: inline-block;
+        text-transform: capitalize; 
+        padding: 5px 20px;
+        background-color: $color-gray;
+        border-radius: 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .restaurant__card {
+    margin: 0;
+
+    .restaurant__card__image--container {
+      img {
+        height: 100%;
+      }
+    }
+  }
+} 
+
+
+@media only screen and (max-width: 600px) {
+  .restaurant__card {
+    margin: 0;
+
+    .restaurant__card__image--container {
+      img {
+        height: auto;
+      }
+    }
+  
+    .restaurant__card__content {
+      .card__title, .card__price {
+        font-size: 1.6rem;
+      }
+      .card__description {
+        font-size: 1.2rem;
+      }
+    }
+  }
+} 

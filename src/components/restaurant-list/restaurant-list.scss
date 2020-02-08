@@ -1,0 +1,94 @@
+@import '../../variables.scss';
+
+.restaurant__list {
+  margin: 2rem;
+
+  .restaurant__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    justify-items: center;
+
+    .restaurant__card {
+      width: 100%;
+      grid-column: span 1;
+
+      .restaurant__card__content {
+        .card__title, .card__price {
+          font-size: 1.4rem;
+        }
+
+        .card__description {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .restaurant__swiper__button {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    button {
+      border-radius: 50%;
+      line-height: 60px;
+      width: 60px;
+      border: 0;
+      background: $color-white;
+      display: inline-block;
+      margin: 1rem;
+      cursor: pointer;
+      box-shadow: $shadow;
+      transition: all 0.3s ease-in-out;
+
+      &:hover, &:focus {
+        transform: scale(1.1);
+      }
+
+      i {
+        font-size: 32px;
+        vertical-align: middle;
+        transition: all 0.3s ease-in-out;
+
+        &:hover, &:focus {
+          transform: scale(1.1);
+        }
+      }
+
+      .fa-th-large {
+        color: $color-gold;
+
+        &:hover, &:focus {
+          color: darken($color: $color-gold, $amount: 20);
+        }
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .restaurant__list {
+    margin: 1rem;
+  
+    .restaurant__cards {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+  }
+} 
+
+@media only screen and (max-width: 600px) {
+  .restaurant__list {
+    margin: 0;
+  
+    .restaurant__cards {
+      grid-template-columns: 1fr;
+      grid-gap: 5px;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import '../../variables.scss';
+
+.restaurant__swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+
+  &.loaded {
+    opacity: 1;
+  }
+
+  .restaurant__cards {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .restaurant__card {
+      width: 90vw;
+      max-width: 600px;
+      height: auto;
+      padding-bottom: 40px;
+      overflow: hidden;
+      position: absolute;
+      will-change: transform;
+      transition: all 0.3s ease-in-out;
+      cursor: -webkit-grab;
+      cursor: -moz-grab;
+      cursor: grab;
+      
+      &.moving {
+        transition: none;
+        cursor: -webkit-grabbing;
+        cursor: -moz-grabbing;
+        cursor: grabbing;
+      }
+    }
+  }
+
+  .restaurant__swiper__buttons {
+    z-index: 2;
+    flex: 0 0 100px;
+    text-align: center;
+
+    button {
+      border-radius: 50%;
+      line-height: 60px;
+      width: 60px;
+      border: 0;
+      background: $color-white;
+      display: inline-block;
+      margin: 0 8px;
+      cursor: pointer;
+      box-shadow: $shadow;
+      transition: all 0.3s ease-in-out;
+
+      &:hover, &:focus {
+        transform: scale(1.1);
+      }
+
+      i {
+        font-size: 32px;
+        vertical-align: middle;
+        transition: all 0.3s ease-in-out;
+
+        &:hover, &:focus {
+          transform: scale(1.1);
+        }
+      }
+
+      .fa-heart {
+        color: $color-pink;
+
+        &:hover, &:focus {
+          color: darken($color: $color-pink, $amount: 20);
+        }
+      }
+
+      .fa-remove {
+        color: $color-blue;
+
+        &:hover, &:focus {
+          color: darken($color: $color-blue, $amount: 20);
+        }
+      }
+
+      .fa-th-large {
+        color: $color-gold;
+
+        &:hover, &:focus {
+          color: darken($color: $color-gold, $amount: 20);
+        }
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
